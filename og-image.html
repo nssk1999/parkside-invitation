@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Image Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1200px;
+      height: 630px;
+      background: #08294a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      color: #d4af37;
+    }
+    .name {
+      font-size: 72px;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.6);
+      letter-spacing: 3px;
+      margin: 0;
+    }
+    .subtitle {
+      font-size: 32px;
+      font-weight: 400;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      letter-spacing: 2px;
+      margin-top: 20px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="name" id="name">Guest</h1>
+    <p class="subtitle">Parkside Invitation</p>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name') || 'Guest';
+    document.getElementById('name').textContent = name;
+    
+    // For services that need to screenshot this, the name is now set
+    // Services like htmlcsstoimage.com or similar can capture this
+  </script>
+</body>
+</html>
+

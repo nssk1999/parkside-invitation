@@ -8,6 +8,32 @@
   <title>Parkside Invitation</title>
   <link rel="canonical" href="https://nssk1999.github.io/parkside-invitation/">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nssk1999.github.io/parkside-invitation/">
+  <meta property="og:title" content="Parkside Invitation" id="og-title">
+  <meta property="og:description" content="You're invited to our Griha Pravesh ceremony" id="og-description">
+  <meta property="og:image" content="https://nssk1999.github.io/parkside-invitation/og-image.html?name=Guest" id="og-image">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nssk1999.github.io/parkside-invitation/">
+  <meta name="twitter:title" content="Parkside Invitation" id="twitter-title">
+  <meta name="twitter:description" content="You're invited to our Griha Pravesh ceremony" id="twitter-description">
+  <meta name="twitter:image" content="https://nssk1999.github.io/parkside-invitation/og-image.html?name=Guest" id="twitter-image">
+  
+  <!-- Update meta tags based on query parameter -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Parkside Griha Pravesh",
+      "description": "Housewarming Ceremony Invitation"
+    }
+  </script>
   <style amp-custom>
     @font-face {
       font-family: 'Noto Serif Telugu';
@@ -286,8 +312,8 @@
                    layout="responsive"
                    class="housewarming-image">
           </amp-img>
-          <div class="invitation-overlay">
-            Invitation for komali
+          <div class="invitation-overlay" id="invitation-name">
+            Invitation for Guest
           </div>
         </div>
       </amp-story-grid-layer>
@@ -357,6 +383,46 @@
     </amp-lightbox>
     
   </amp-story>
+  
+  <!-- Update name from query parameter -->
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get('name') || 'Guest';
+      
+      // Update overlay text
+      const overlayElement = document.getElementById('invitation-name');
+      if (overlayElement) {
+        overlayElement.textContent = 'Invitation for ' + name;
+      }
+      
+      // Update OG meta tags
+      const updateMetaTag = (id, property, value) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.setAttribute('content', value);
+        }
+        // Also update by property
+        const metaByProperty = document.querySelector(`meta[property="${property}"]`);
+        if (metaByProperty) {
+          metaByProperty.setAttribute('content', value);
+        }
+        const metaByName = document.querySelector(`meta[name="${property}"]`);
+        if (metaByName) {
+          metaByName.setAttribute('content', value);
+        }
+      };
+      
+      if (name !== 'Guest') {
+        updateMetaTag('og-title', 'og:title', `Parkside Invitation for ${name}`);
+        updateMetaTag('og-description', 'og:description', `Invitation for ${name} - Parkside Griha Pravesh`);
+        updateMetaTag('og-image', 'og:image', `https://nssk1999.github.io/parkside-invitation/og-image.html?name=${encodeURIComponent(name)}`);
+        updateMetaTag('twitter-title', 'twitter:title', `Parkside Invitation for ${name}`);
+        updateMetaTag('twitter-description', 'twitter:description', `Invitation for ${name} - Parkside Griha Pravesh`);
+        updateMetaTag('twitter-image', 'twitter:image', `https://nssk1999.github.io/parkside-invitation/og-image.html?name=${encodeURIComponent(name)}`);
+      }
+    })();
+  </script>
 </body>
 </html>
 
