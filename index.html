@@ -312,7 +312,7 @@
                    layout="responsive"
                    class="housewarming-image">
           </amp-img>
-          <div class="invitation-overlay" id="invitation-name">
+          <div class="invitation-overlay" id="invitation-name" style="display: none;">
             Invitation for Guest
           </div>
         </div>
@@ -388,12 +388,17 @@
   <script>
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
-      const name = urlParams.get('name') || 'Guest';
+      const name = urlParams.get('name');
       
-      // Update overlay text
+      // Update overlay text - only show if name parameter exists
       const overlayElement = document.getElementById('invitation-name');
       if (overlayElement) {
-        overlayElement.textContent = 'Invitation for ' + name;
+        if (name) {
+          overlayElement.textContent = 'Invitation for ' + name;
+          overlayElement.style.display = 'block';
+        } else {
+          overlayElement.style.display = 'none';
+        }
       }
       
       // Update OG meta tags
@@ -413,7 +418,7 @@
         }
       };
       
-      if (name !== 'Guest') {
+      if (name) {
         updateMetaTag('og-title', 'og:title', `Parkside Invitation for ${name}`);
         updateMetaTag('og-description', 'og:description', `Invitation for ${name} - Parkside Griha Pravesh`);
         updateMetaTag('og-image', 'og:image', `https://nssk1999.github.io/parkside-invitation/og-image.html?name=${encodeURIComponent(name)}`);
