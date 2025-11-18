@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Optional: Uncomment if you don't want to track large assets
+# assets/*.jpg
+# assets/*.png
+# assets/*.woff2
+
