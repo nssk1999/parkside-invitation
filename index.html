@@ -313,7 +313,7 @@
                    class="housewarming-image">
           </amp-img>
           <div class="invitation-overlay" id="invitation-name" style="display: none;">
-            Invitation for Guest
+             for Guest
           </div>
         </div>
       </amp-story-grid-layer>
@@ -394,7 +394,7 @@
       const overlayElement = document.getElementById('invitation-name');
       if (overlayElement) {
         if (name) {
-          overlayElement.textContent = 'Invitation for ' + name;
+          overlayElement.textContent =  'for '+name;
           overlayElement.style.display = 'block';
         } else {
           overlayElement.style.display = 'none';
