@@ -1,0 +1,11 @@
+# Ignore node_modules
+functions/node_modules
+
+# Ignore firebase-debug.log
+firebase-debug.log
+
+# Ignore assets and fonts to keep them private
+public/assets/*
+!public/assets/.gitkeep
+public/fonts/*
+!public/fonts/.gitkeep
