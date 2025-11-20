@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nidamanuri Griha Pravesh Invitation</title>
+    <meta property="og:title" content="Nidamanuri Griha Pravesh Invitation" />
+    <meta property="og:description" content="You are warmly invited to the Griha Pravesh ceremony." />
+    <meta property="og:image" content="https://your-firebase-app-url.com/og?name=Guest" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name') || 'Guest';
+
+        // Configure your Vercel OG app base URL here (deploy the `vercel-og` project to Vercel)
+        const vercelOgHost = 'https://parkside-og.vercel.app';
+        const ogImageUrl = `${vercelOgHost}/api/og?name=${encodeURIComponent(name)}`;
+
+        const title = `Nidamanuri Griha Pravesh – Invitation for ${name}`;
+        const ogTitle = `Invitation for ${name}`;
+
+        document.title = title;
+        document.querySelector('meta[property="og:title"]').setAttribute('content', ogTitle);
+        document.querySelector('meta[property="og:image"]').setAttribute('content', ogImageUrl);
+        document.querySelector('meta[name="twitter:image"]').setAttribute('content', ogImageUrl);
+
+        // Redirect to the story
+        window.location.href = '/story.html';
+    </script>
+</head>
+<body>
+    <p>Loading invitation...</p>
+</body>
+</html>
