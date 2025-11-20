@@ -104,7 +104,7 @@
     
     .passport-title {
       position: absolute;
-      bottom: 40px;
+      bottom: 10px;
       left: 0;
       right: 0;
       text-align: center;
@@ -161,7 +161,7 @@
     
     .invitation-overlay {
       position: absolute;
-      bottom: 50px;
+      bottom: 30px;
       left: 0;
       right: 0;
       text-align: center;
@@ -421,9 +421,7 @@
           overlayElement.textContent =  'for '+name;
           overlayElement.style.display = 'block';
         } else {
-          // keep the default cover text when no name provided
-          overlayElement.textContent = 'By Srinivas and family';
-          overlayElement.style.display = 'block';
+          overlayElement.style.display = 'none';
         }
       }
       
@@ -447,11 +445,10 @@
       if (name) {
         updateMetaTag('og-title', 'og:title', `Parkside Invitation for ${name}`);
         updateMetaTag('og-description', 'og:description', `Invitation for ${name} - Parkside Griha Pravesh`);
-        // keep the OG image static to passport.png for WhatsApp sharing
-        updateMetaTag('og-image', 'og:image', `https://nssk1999.github.io/parkside-invitation/assets/passport.png`);
+        updateMetaTag('og-image', 'og:image', `https://nssk1999.github.io/parkside-invitation/og-image.html?name=${encodeURIComponent(name)}`);
         updateMetaTag('twitter-title', 'twitter:title', `Parkside Invitation for ${name}`);
         updateMetaTag('twitter-description', 'twitter:description', `Invitation for ${name} - Parkside Griha Pravesh`);
-        updateMetaTag('twitter-image', 'twitter:image', `https://nssk1999.github.io/parkside-invitation/assets/passport.png`);
+        updateMetaTag('twitter-image', 'twitter:image', `https://nssk1999.github.io/parkside-invitation/og-image.html?name=${encodeURIComponent(name)}`);
       }
     })();
   </script>
