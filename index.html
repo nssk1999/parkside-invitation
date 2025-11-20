@@ -40,7 +40,7 @@
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url('assets/NotoSerifTelugu-Regular.woff2') format('woff2');
+      src: url('/parkside-invitation/assets/NotoSerifTelugu-Regular.woff2') format('woff2');
       unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+200C-200D, U+25CC;
     }
     @font-face {
@@ -48,7 +48,7 @@
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url('assets/NotoSerifTelugu-Bold.woff2') format('woff2');
+      src: url('/parkside-invitation/assets/NotoSerifTelugu-Bold.woff2') format('woff2');
       unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+200C-200D, U+25CC;
     }
     @font-face {
@@ -56,14 +56,14 @@
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url('assets/PlayfairDisplay-Regular.woff2') format('woff2');
+      src: url('/parkside-invitation/assets/PlayfairDisplay-Regular.woff2') format('woff2');
     }
     @font-face {
       font-family: 'Playfair Display';
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url('assets/PlayfairDisplay-Bold.woff2') format('woff2');
+      src: url('/parkside-invitation/assets/PlayfairDisplay-Bold.woff2') format('woff2');
     }
     
     .cover-container {
@@ -104,7 +104,7 @@
     
     .passport-title {
       position: absolute;
-      bottom: 20px;
+      bottom: 40px;
       left: 0;
       right: 0;
       text-align: center;
@@ -161,7 +161,7 @@
     
     .invitation-overlay {
       position: absolute;
-      bottom: 20px;
+      bottom: 50px;
       left: 0;
       right: 0;
       text-align: center;
@@ -296,16 +296,16 @@
   <amp-story standalone
              title="Parkside Invitation"
              publisher="Parkside"
-             publisher-logo-src="assets/logo.png"
-             poster-portrait-src="assets/passport.png"
-             poster-square-src="assets/passport.png"
-             poster-landscape-src="assets/passport.png">
+             publisher-logo-src="/parkside-invitation/assets/logo.png"
+             poster-portrait-src="/parkside-invitation/assets/passport.png"
+             poster-square-src="/parkside-invitation/assets/passport.png"
+             poster-landscape-src="/parkside-invitation/assets/passport.png">
     
     <!-- Page 1: Cover Image (By Srinivas and family) -->
     <amp-story-page id="cover" auto-advance-after="5s">
       <amp-story-grid-layer template="fill">
         <div class="housewarming-page">
-          <amp-img src="assets/passport.png"
+          <amp-img src="/parkside-invitation/assets/passport.png"
                    alt="Parkside Invitation Cover"
                    width="832"
                    height="1248"
@@ -323,7 +323,7 @@
     <amp-story-page id="invitation-english" auto-advance-after="8s">
       <amp-story-grid-layer template="fill">
         <div class="housewarming-page">
-          <amp-img src="assets/invitation_english.png"
+          <amp-img src="/parkside-invitation/assets/invitation_english.png"
                    alt="Invitation - English"
                    width="1080"
                    height="1920"
@@ -338,7 +338,7 @@
     <amp-story-page id="invitation-telugu" auto-advance-after="8s">
       <amp-story-grid-layer template="fill">
         <div class="housewarming-page">
-          <amp-img src="assets/invitation_telugu.jpg"
+          <amp-img src="/parkside-invitation/assets/invitation_telugu.jpg"
                    alt="Invitation - Telugu"
                    width="1080"
                    height="1920"
@@ -353,7 +353,7 @@
     <amp-story-page id="map">
       <amp-story-grid-layer template="vertical" class="map-page">
         <div class="map-container">
-          <amp-img src="assets/map_image.png"
+          <amp-img src="/parkside-invitation/assets/map_image.png"
                    alt="Location Map - Tap to zoom"
                    width="1152"
                    height="896"
@@ -395,7 +395,7 @@
     <!-- Lightbox for zooming map -->
     <amp-lightbox id="map-lightbox" layout="nodisplay">
       <div class="lightbox-container" on="tap:map-lightbox.close" role="button" tabindex="0">
-      <amp-img src="assets/map_image.png"
+        <amp-img src="/parkside-invitation/assets/map_image.png"
                  alt="Location Map - Zoomed"
                  width="1152"
                  height="896"
